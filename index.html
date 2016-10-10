@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Genasys Technologies</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/dropdown.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/smoothDivScroll.css" rel="stylesheet" type="text/css" />
+<link href="css/new_nav_2014.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.smoothDivScroll-1.1.js"></script>
+<script type="text/javascript" src="scripts/jquery.hoverIntent.minified.js" ></script>
+<style>
+
+.support-login-box.imported label {
+display: none;
+}
+.support-login-box input[type="password"]{
+margin: 0px 0 0 20px;}
+
+.support-login-box.imported button#Login
+{width: 100%;
+margin: 1rem;
+background-color: #ec2028;
+padding: 2rem 0;
+color: #fff;
+font-size: 20px;
+border: none;
+}
+input#username {
+margin: 0px 0 0 9px;
+}
+
+.support-login-box.imported div#rem {
+display: none;
+}
+
+.identity.first,
+.identity.last {
+float: left;
+width: 49%;
+}
+
+</style>
+
+
+<script>
+	$('.support-login-box').text("hello");
+</script>
+
+<script type="text/javascript">
+$(document).ready( function(){
+	// SUPPORT LOGIN
+	var ie7 = (navigator.appVersion.indexOf("MSIE 7.")==-1) ? false : true;
+	if(ie7){
+		$('#support_link').attr({'href':'https://genasys.force.com/customers/login?inst=U&startURL;=/customers/500/o', 'target': '_new'});
+	}
+	var focused = true;
+	$(window).focus(function(){
+		focused = true;
+	});
+	$(window).blur(function(){
+		focused = false;
+	});
+
+	$('#support').click(function(){
+		$('ul.support_login').show();
+		$('#close_wrap').show();
+	});
+	$('#close_wrap').click(function(){
+		$('ul.support_login').hide();
+		$('#close_wrap').hide();
+	});
+
+	var path = window.location.pathname;
+	var page_name = path.substring(path.lastIndexOf('/') + 1);
+	var prefix = '../';
+	if(page_name=="index.html" || page_name==""){
+		prefix=  '';
+	}
+	$('.login-btn').click(function(){
+		var helpdesk = $('#helpdesk').attr('checked'),
+		ontime = $('#ontime').attr('checked');
+		if(helpdesk=="checked"){
+			$('#support_login_form').attr('action','https://genasys.force.com/customers/login?inst=U&startURL;=/customers/500/o');
+			$('#support_login_form').submit();
+		}
+		else if(ontime=="checked"){
+			$('#support_login_form').attr('action','https://genasys.force.com/customers/login?inst=U&startURL;=/customers/500/o');
+			$('#support_login_form').submit();
+		}
+	});
+
+	// SUPPORT BOX MODAL
+	function set_overlay_height(){
+		var page_height = $(document).outerHeight();
+		$('.overlay').css('height', page_height+'px');
+	}
+	$( "a.gen-sup" ).click(function() {
+		set_overlay_height();
+		$('.overlay').delay(300).fadeIn(300);//show overlay background
+		$('.alert_wrap').delay(300).fadeIn(300);//show alert_box
+	});
+	$('.close-it, .overlay').click(function(){
+		$('.overlay').fadeOut(300);
+		$('.alert_wrap').fadeOut(300);
+		return false;
+	});
+
+
+});
+</script>
+
+<script>
+$(document).ready(function(){
+	$('.hd-nav li').click(function(){
+		var subnav = $(this).children('.subnav');
+		if(subnav.size()>0){
+			subnav.slideToggle();
+		}
+	});
+
+	var ie7 = (navigator.appVersion.indexOf("MSIE 7.")==-1) ? false : true;
+	if(ie7){
+	}
+
+	//================= Nav Dropdowns 2014 ====================\\
+	$(".hd-nav li").hoverIntent({
+    	over: function(){
+			var subnav = $(this).children('.subnav');
+			if(subnav.size()>0){
+				if(!ie7){ subnav.stop().slideDown(); }
+				else{ subnav.show(); }
+			}
+		},
+		out: function(){
+			var subnav = $(this).children('.subnav');
+			if(subnav.size()>0){
+				if(!ie7){ subnav.stop().slideUp(); }
+				else{ subnav.hide(); }
+			}
+		},
+		timeout: 500
+	});
+	//================= END Nav Dropdowns 2014 ====================\\
+
+});
+</script>
+<!-- InstanceBeginEditable name="head" -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+	 $('.active').removeClass('main active');
+	// $('#nav_home').addClass('main active');
+});
+</script>
+
+
+<style type="text/css">
+.thumb_box ul{
+	width: 219px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.thumb_box ul li{
+	position: relative;
+
+}
+</style>
+</head>
+<body>
+
+<!-- new nav here -->
+<div class="head-full-wrap">
+	<div class="head-container">
+		<div class="head-row clearfix">
+			<div class="logo-box left">
+				<a href="index.php" title="Home page">
+					<img src="elements/general_build/white-logo.png" alt="Genasys logo" width="320" height="127">
+				</a>
+			</div><!-- logo-box -->
+			<div class="nav-box left">
+				<div class="nav-box-content clearfix">
+					
+					<ul class="hd-nav"><!--
+						--><li class="margin-adjusted"><a href="pages/about.php" id="nav_home">About</a></li><!--
+						--><li class="ie-bdr-fix"><a href="pages/products.php" id="nav_products">Products</a><!--
+                          --><div class="subnav"><!--
+									--><ul class="sublisted"><!--
+										--><li><a href="pages/product.php?t=1">SKi</a></li>
+										<li><a href="pages/product.php?t=6">Instanda</a></li><!--
+									--></ul><!--
+								--></div><!--
+						--></li><!--
+						--><li><a href="pages/people.php" id="nav_people">People</a></li> 
+						<li><a href="pages/press.php" id="nav_press">Press</a></li>
+						<!-- <li><a href="pages/videos.php" id="nav_videos">Videos</a></li>  -->
+						<li><a href="pages/culture.php" id="nav_culture">Culture</a></li><!--
+						--><li class="ie-bdr-fix"><a href="pages/contact.php" id="nav_contact" style="padding-right:0;">Contact</a>
+								<div class="subnav contact-left-pos">
+									<ul class="sublisted"><!--
+										--><li><a href="pages/contact.php">Contact us</a></li><!--
+										--><li><a href="#" class="gen-sup">Support login</a></li><!--
+										--><li><a href="pdfs/genasys-tech-paia-manual-2015.pdf" target="_blank">Compliance</a></li><!--
+									--></ul>
+								</div><!--
+						--></li><!--
+					--></ul>
+				</div><!-- nav-box-content clearfix -->
+			</div><!-- nav-box -->
+		</div><!-- head-row clearfix -->
+	</div><!-- head-container -->
+</div><!-- head-full-wrap -->
+<!-- new nav here -->
+
+<!-- InstanceBeginEditable name="content" -->
+<div id="splash-top">
+
+	<div class="container banner-top">
+
+		<img src="elements/general_build/genasys-splash.png" alt="Genasys logo" class="img-responsive genasys-splash-logo">
+
+		<p class="splash-text">If you would like to engage with a Technology Partner that has the proven track record to help optimise your business with a stable and robust PAS, please contact us here</p>
+
+		<div class="splash-row">
+	    	<div class="col-md-4">
+				<input class="text-field-white" type="text" placeholder="Name" value="">
+	    	</div>
+
+	    	<div class="col-md-4">
+				<input class="text-field-white" type="text" placeholder="Surname" value="">
+	    	</div>
+
+	    	<div class="col-md-4">
+				<input class="text-field-white" type="email" placeholder="E-mail" value="">
+	    	</div>
+			
+			
+		</div>
+
+		<div class="splash-row" style="margin-top: 50px">
+			<div class="col-md-4">
+	    	</div>
+	    	<div class="col-md-4">
+				<button type="button" class="btn btn-info splash-submit">SUBMIT</button>
+	    	</div>
+	    	<div class="col-md-4">				
+	    	</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div id="stats-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 stats-box-outer">
+				<div class="stats-box-inner">
+				<i class="fa fa-users fa-2x users-icon" aria-hidden="true"></i>
+					<p class="box1-count">90+</p>
+				</div>
+				<p>Amount of employees</p>
+	    	</div>
+	    	<div class="col-md-3 stats-box-outer">
+	    		<div class="stats-box-inner">
+	    		</div>
+				<p>Branch Locations Globally</p>
+	    	</div>
+	    	<div class="col-md-3 stats-box-outer">
+	    		<div class="stats-box-inner">
+	    		</div>
+				<p>Countries Deployed</p>
+	    	</div>
+	    	<div class="col-md-3 stats-box-outer">
+	    		<div class="stats-box-inner">
+	    		</div>
+				<p>GWP value in Rands</p>
+	    	</div>
+
+    	</div>
+    </div>
+</div>
+
+
+<div id="footer-new">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-3 footer-col">
+	      <a href="index.php" title="Home page">
+			<img src="elements/general_build/white-logo.png" alt="Genasys logo" width="100%" height="auto">
+		  </a>
+	      <p><br>is an industry leading technology-inspired software company which develops and supports world-class software and services for its partners in the insurance industry.
+	    </div>
+	    <div class="col-md-3 footer-col">
+	      <h4>WEBSITE NAVIGATION</h4><hr>
+	      <ul>
+	      	<li><a>ABOUT</a></li>
+	      	<li><a>PRODUCTS</a></li>
+	      	<li><a>PEOPLE</a></li>
+	      	<li><a>CULTURE</a></li>
+	      	<li><a>CONTACT</a></li>
+	      </ul>
+	    </div>
+	    <div class="col-md-3 footer-col">
+	      <h4>TWITTER FEED <a href="http://www.twitter.com/GenasysTech" title="Follow us on Twitter"><i class="fa fa-twitter social-icons-footer" aria-hidden="true"></i></a></h4>
+	      <a class="twitter-timeline" height="270px" data-theme="dark" data-border-color="rgba(0,0,0,0)" data-chrome="nofooter transparent noheader noborders noscrollbar"  href="https://twitter.com/GenasysTech">Tweets by GenasysTech</a> 
+	    </div>
+	    <div class="col-md-3 footer-col">
+	      <h4>SUPPORT LOGIN</h4>
+      		<form name="login" method="post" onsubmit="handleLogin();" action="https://genasys.force.com/customers/login?inst=U&startURL;=/customers/500/o" target="_top" novalidate="novalidate">
+				<input type="hidden" id="pqs" name="pqs" value="?inst=U&amp;startURL=%2Fcustomers%2F500%2Fo">
+				<fieldset style="display:none">
+
+				<input type="hidden" name="un" value="">
+				<input type="hidden" name="width" value="1920">
+				<input type="hidden" name="height" value="1080">
+				<input type="hidden" name="hasRememberUn" value="true">
+				<input type="hidden" id="login_startUrl" name="startURL" value="/customers/500/o">
+				<input type="hidden" name="loginURL" value="">
+				<input type="hidden" name="loginType" value="">
+				<input type="hidden" name="useSecure" value="true">
+				<input type="hidden" name="local" value="">
+				<input type="hidden" name="lt" value="standard">
+				<input type="hidden" name="qs" value="">
+				<input type="hidden" name="locale" value="">
+				<input type="hidden" name="oauth_token" value="">
+				<input type="hidden" name="oauth_callback" value="">
+				<input type="hidden" name="login" value="">
+				<input type="hidden" name="serverid" value="">
+				<input type="hidden" name="display" value="page">
+
+				</fieldset>
+				<input class="text-field-white" type="email" placeholder="Username" value="" name="username" id="username" onkeyup="if(this.value != ''){document.getElementById('clrUsr').style.display='block';}else{document.getElementById('clrUsr').style.display='none';}">
+				<div class="loginbox_container" onclick="document.login.password.focus();">
+				<input class="text-field-white" type="password" placeholder="Password" id="password" name="pw" onkeypress="checkCaps(event)" autocomplete="off" onkeyup="if(this.value != ''){document.getElementById('clrPw').style.display='block';}else{document.getElementById('clrPw').style.display='none';}">
+				<button class="button" id="Login" name="Login">SUBMIT</button></div><div class="loginbox_container" id="forgot">
+				<p class="small"><a href="https://genasys.force.com/customers/secur/forgotpassword.jsp?locale=us&amp;startURL=%2Fcustomers%2F500%2Fo">Forgot your password?</a></p>
+				</div>
+			</form>
+				
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div id="copyright-footer">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6"  style="text-align: left">
+				<p>&copy; 2017 Genasys Technologies</p>
+			</div>
+			<div class="col-xs-6"  style="text-align: right">
+				<a href="http://www.facebook.com/Genasystech" title="Join us on Facebook"><i class="fa fa-facebook-square fa-2x social-icons-footer" aria-hidden="true"></i></a>
+				<a href="http://www.twitter.com/GenasysTech" title="Follow us on Twitter"><i class="fa fa-twitter-square fa-2x social-icons-footer" aria-hidden="true"></i></a>
+				<a href="http://www.youtube.com/channel/UClAVW5-xeGJK8b-QPSuWNaQ" title="Watch us on Youtube"><i class="fa fa-youtube-square fa-2x social-icons-footer" aria-hidden="true"></i></a>
+				<a href="http://www.linkedin.com/company/genasys-technologies-pty-ltd" title="Connect with us on LinkedIn"><i class="fa fa-linkedin-square fa-2x social-icons-footer" aria-hidden="true"></i></a>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="overlay"></div><!-- end of overlay -->
+<div class="container">
+	<div class="alert_wrap">
+		<div class="support-login-box imported">
+
+
+<!-- This is a testing form, NOT TO BE IMPLEMENTED -->
+			<form name="login" method="post" onsubmit="handleLogin();" action="https://genasys.force.com/customers/login?inst=U&startURL;=/customers/500/o" target="_top" novalidate="novalidate">
+			<input type="hidden" id="pqs" name="pqs" value="?inst=U&amp;startURL=%2Fcustomers%2F500%2Fo">
+			<fieldset style="display:none">
+
+			<input type="hidden" name="un" value="">
+			<input type="hidden" name="width" value="1920">
+			<input type="hidden" name="height" value="1080">
+			<input type="hidden" name="hasRememberUn" value="true">
+			<input type="hidden" id="login_startUrl" name="startURL" value="/customers/500/o">
+			<input type="hidden" name="loginURL" value="">
+			<input type="hidden" name="loginType" value="">
+			<input type="hidden" name="useSecure" value="true">
+			<input type="hidden" name="local" value="">
+			<input type="hidden" name="lt" value="standard">
+			<input type="hidden" name="qs" value="">
+			<input type="hidden" name="locale" value="">
+			<input type="hidden" name="oauth_token" value="">
+			<input type="hidden" name="oauth_callback" value="">
+			<input type="hidden" name="login" value="">
+			<input type="hidden" name="serverid" value="">
+			<input type="hidden" name="display" value="page">
+
+			</fieldset>
+
+			<h2>Support login</h2>
+			<div class="close-container">
+					<img src="elements/general_build/spb_x_2x.png" alt="Close" width="16" height="16" class="close-it">
+				</div>
+
+<div class="loginbox_container" onclick="document.login.username.focus();">
+<!-- <div onclick="LoginHint.clearUsr();" id="clrUsr" class="clrField" style="display: none;">&nbsp;</div> -->
+<div class="identity first">
+<label for="username" class="zen-assistiveText">User Name</label>
+<span class="t">
+<!-- <img id="loginthumb" src="/img/user188.png" alt="User Name" width="28" height="28" class="thumbnail" title="User Name"> -->
+</span>
+<input type="email" placeholder="User Name" value="" class="input identityinput" name="username" id="username" onkeyup="if(this.value != ''){document.getElementById('clrUsr').style.display='block';}else{document.getElementById('clrUsr').style.display='none';}"></div>
+</div>
+<div class="loginbox_container" onclick="document.login.password.focus();">
+<!-- <div onclick="document.getElementById('password').value = '';this.style.display='none';document.login.pw.focus();" id="clrPw" class="clrField">&nbsp;</div> -->
+<div class="identity last"><label for="password" class="zen-assistiveText">Password</label><span class="t">
+<!-- <img src="/customers/img/lock188.png" alt="Password" width="28" height="28" class="thumbnail" title="Password"> -->
+</span>
+<input type="password" placeholder="Password" class="input identityinput" id="password" name="pw" onkeypress="checkCaps(event)" autocomplete="off" onkeyup="if(this.value != ''){document.getElementById('clrPw').style.display='block';}else{document.getElementById('clrPw').style.display='none';}"></div>
+</div>
+<div id="pwcaps" class="loginbox_container" style="display:none">
+<!-- <img id="pwcapsicon" alt="Caps Lock is ON!" width="16" height="16" src="/img/icon/warning16.png">  -->
+Caps Lock is ON!</div>
+<div class="loginbox_container"><button class="button" id="Login" name="Login"><span class="label">Log in</span></button></div>
+<div class="loginbox_container">
+<div id="rem" class="wrapper_remember">
+<input type="checkbox" id="rememberUn" name="rememberUn">            &nbsp;
+<label for="rememberUn">Remember User Name</label>
+</div>
+</div>
+<div class="loginbox_container" id="forgot">
+<p class="small">Forgot your password? <a href="https://genasys.force.com/customers/secur/forgotpassword.jsp?locale=us&amp;startURL=%2Fcustomers%2F500%2Fo">Click Here</a></p>
+</div>
+</form>
+<!-- End of testing form -->
+		</div><!-- support-login-box -->
+	</div><!--alert_wrap-->
+</div><!-- container -->
+<!-- support modal end -->
+
+
+<!-- Start of StatCounter Code for Dreamweaver -->
+<script type="text/javascript">
+var sc_project=7731196;
+var sc_invisible=1;
+var sc_security="3cf6b2b1";
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="joomla
+statistics" href="http://statcounter.com/joomla/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7731196/0/3cf6b2b1/1/"
+alt="joomla statistics"></a></div></noscript>
+<!-- End of StatCounter Code for Dreamweaver -->
+
+<script type="text/javascript">
+function handleLogin(){
+	document.login.un.value=document.login.username.value;
+	document.login.width.value=screen.width;
+	document.login.height.value=screen.height;
+}
+function lazyload(){
+	document.getElementById("pwcapsicon").src="/img/icon/warning16.png";
+}loader();
+</script>
+
+
+<!-- Start of StatCounter Code for Dreamweaver -->
+<script type="text/javascript">
+var sc_project=8103517;
+var sc_invisible=1;
+var sc_security="08a3693b";
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="tumblr
+analytics" href="http://statcounter.com/tumblr/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/8103517/0/08a3693b/1/"
+alt="tumblr analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Dreamweaver -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="scripts/bootstrap.min.js"></script>
+
+<script src="https://platform.twitter.com/widgets.js"></script>
+
+
+</body>
+<!-- InstanceEnd --></html>
