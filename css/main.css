@@ -166,6 +166,20 @@ a img, img {border:none;}
 	color:white;
 }
 
+#chart1-section {
+	background-color: #BD2228;
+    padding-top: 80px;
+    padding-bottom: 250px;
+    text-align: center;
+    color: white;
+
+}
+
+#chart1 {
+	height: 600px;
+	width: auto;
+}
+
 /*=========== END INDEX NEW ============*/
 
 /*=========== START NEW FOOTER ===========*/
@@ -1001,6 +1015,22 @@ form.cmxform label.error, label.error {
 	font-weight:normal;
 	
 }
+
+form.cmxform2 label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color:  #999;
+	position:absolute;
+	top: 45px;
+	right: 25px;
+	font-size:9px;
+	font-weight:normal;
+	
+}
+
+.mobile-padding-contact{
+	padding-bottom: 50px;
+}
+
 #google_map_container {
 	position:relative;
 	width:900px;

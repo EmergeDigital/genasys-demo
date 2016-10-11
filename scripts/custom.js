@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+	//========START SCROLLING SECTION============
+
 	var initialScroll = false;
 	var objectString = $('.count1')[0];
 
@@ -25,6 +27,14 @@ $(document).ready(function(){
 	if (isScrolledIntoView(objectString3)  ){
 		counter3animate();
 		initialScroll3 = true;
+	}
+
+	var initialScroll4 = false;
+	var objectString4 = $('#chart1')[0];
+
+	if (isScrolledIntoView(objectString4)  ){
+		showChart1();
+		initialScroll4 = true;
 	}
 
 	function counter1animate(){
@@ -92,14 +102,197 @@ $(document).ready(function(){
 			initialScroll3 = true;
 		}
 
-		// if (initialScroll2 === false  && isScrolledIntoView(objectString2)  ){
-		// 	console.log("Element is in view!");
-		// 	initialScroll2 = true;
-		// }
-
-
-
+		if (initialScroll4 === false  && isScrolledIntoView(objectString4)  ){
+			showChart1();
+			initialScroll4 = true;
+		}
 
 	})
+
+
+	//===========END SCROLLING SECTION============
+
+
+	//=============START TIMERS===================
+	var currentFrame = 3;
+	var skipFrame = false;
+
+	function shuffleCitites() {
+		
+		if (currentFrame === 3){			// FRAME 1 london / cpt / jhb 
+			currentFrame = 1;
+			$('.city-box1').text("Cope Lown");
+			$('.city-box2').text("Japehanesbown");			
+			$('.city-box3').text("Lojanesburg");
+			setTimeout(function() {
+				$('.city-box1').text("Candown");
+				$('.city-box2').text("Cope Hanestown");			
+				$('.city-box3').text("Jondownesburg");
+			}, 80);
+
+			setTimeout(function() {
+				$('.city-box1').text("Coplon");
+				$('.city-box2').text("Cop Tanes");			
+				$('.city-box3').text("Jobergondon");
+			}, 160);
+
+			setTimeout(function() {
+				$('.city-box1').text("London");
+				$('.city-box2').text("Cape Town");
+				$('.city-box3').text("Johannesburg");
+			}, 240);
+
+		} else if (currentFrame === 1) { 	// FRAME 2 jhb / london / cpt
+			currentFrame = 2;
+
+			$('.city-box1').text("Jobedone");
+			$('.city-box2').text("Cope Lown");		
+			$('.city-box3').text("Lapejannestown");
+			setTimeout(function() {
+				$('.city-box1').text("Londwonersdon");
+				$('.city-box2').text("Lontowncap");			
+				$('.city-box3').text("Capedownieburg");
+			}, 80);
+
+			setTimeout(function() {
+				$('.city-box1').text("Jodondon");
+				$('.city-box2').text("Capedown");		
+				$('.city-box3').text("Jobtown");
+			}, 160);
+
+			setTimeout(function() {
+				$('.city-box1').text("Johannesburg");
+				$('.city-box2').text("London");
+				$('.city-box3').text("Cape Town");
+			}, 240);
+
+			// jhb -> cpt | london -> jhb | cpt -> london
+		} else if (currentFrame === 2){ 	// FRAME 3 cpt / jhb / london
+			currentFrame = 3;
+
+			$('.city-box1').text("Jobtown");
+			$('.city-box2').text("Jobergondon");			
+			$('.city-box3').text("Crapedon");
+			setTimeout(function() {
+				$('.city-box1').text("Capedownieburg");
+				$('.city-box2').text("Lontowncap");			
+				$('.city-box3').text("Calmdown");
+			}, 80);
+
+			setTimeout(function() {
+				$('.city-box1').text("Japehanesbown");
+				$('.city-box2').text("Jondownesburg");			
+				$('.city-box3').text("Lape Ton");
+			}, 160);
+
+			setTimeout(function() {
+				$('.city-box1').text("Cape Town");
+				$('.city-box2').text("Johannesburg");
+				$('.city-box3').text("London");
+			}, 240);
+
+		}
+	}
+
+	(function(){
+	    // do some stuff
+
+	    if(skipFrame === false){
+	    	shuffleCitites();
+	    } else {
+	    	skipFrame === false;
+	    }
+
+	    setTimeout(arguments.callee, 4000);
+	})();
+
+	$( ".cities-box" ).click(function() {
+    	shuffleCitites();
+    	skipFrame = true;
+	});
+
+
+
+
+	//=============END TIMERS====================
+
+
+	//==============START CHARTS=================
+
+
+	function showChart1(){
+
+		var ctx = document.getElementById("chart1");
+		var data = {
+	    labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+	    datasets: [
+		        {
+		            label: "Amount of employees",
+		            fill: true,
+		            lineTension:0.3,
+		            backgroundColor: "rgba(54, 162, 235, 0.5)",
+		            borderColor: "rgba(54, 162, 235, 1)",
+		            borderCapStyle: 'butt',
+		            borderDash: [],
+		            borderDashOffset: 0.0,
+		            borderJoinStyle: 'miter',
+		            defaultFontColor:'#fff',
+		            // pointBorderColor: "rgba(54, 162, 235, 1)",
+		            pointBorderColor: "rgba(255, 255, 255, 1)",
+		            // pointBackgroundColor: "rgba(255, 255, 255, 1)",
+		            pointBackgroundColor: "rgba(231, 35, 37, 1)",
+		            pointBorderWidth: 2,
+		            pointHoverRadius: 5,
+		            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+		            pointHoverBorderColor: "rgba(220,220,220,1)",
+		            pointHoverBorderWidth: 2,
+		            pointRadius: 4,
+		            pointHitRadius: 10,
+		            data: [32, 41, 54, 64, 74, 73, 77],
+		            spanGaps: false,
+		        }
+		    ]
+		};
+		var chartInstance = new Chart(ctx, {
+		    type: 'line',
+		    data: data,
+		    options: {
+		        title: {
+		            display: false
+		        },
+		        legend: {
+	            	display: true,
+		            labels: {
+		                fontColor: 'rgb(255, 255, 255)'
+		            }
+		        },
+			    scales:{
+				  xAxes:[{
+				    gridLines:{
+				      color:"rgba(255,255,255,0.35)",
+				      zeroLineColor:"rgba(255,255,255,0.35)"
+				    },
+				    ticks: {
+	                  fontColor: "#fff", // font color
+	                }
+				  }],
+
+				  yAxes:[{
+				    gridLines:{
+				      color:"rgba(255,255,255,0.35)",
+				      zeroLineColor:"rgba(255,255,255,0.35)"
+				    },
+				    ticks: {
+	                  fontColor: "#fff", // font color
+	                }
+				  }]
+				}
+		    }
+		})
+
+	}
+
+
+	//==============END CHARTS==================
 	
 });
