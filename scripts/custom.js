@@ -200,7 +200,7 @@ $(document).ready(function(){
 	    if(skipFrame === false){
 	    	shuffleCitites();
 	    } else {
-	    	skipFrame === false;
+	    	skipFrame = false;
 	    }
 
 	    setTimeout(arguments.callee, 4000);
