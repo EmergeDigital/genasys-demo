@@ -7,15 +7,8 @@ body, html {
 	width:100%;
 }
 
-html {
-}
-
 body {
-	overflow-x: hidden !important;
-    width:100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    overflow-x:hidden;
 }
 
 a {color:#db0f00}
@@ -193,8 +186,8 @@ a img, img {border:none;}
 }
 
 #chart1 {
-	/*height: 600px;*/
-	/*width: auto;*/
+	height: 600px;
+	width: auto;
 }
 
 #timeline {
@@ -219,8 +212,8 @@ a img, img {border:none;}
 }
 
 #chart2 {
-	/*height: 600px;*/
-	/*width: auto;*/
+	height: 600px;
+	width: auto;
 }
 /*=========== END INDEX NEW ============*/
 
