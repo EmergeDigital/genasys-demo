@@ -1,6 +1,7 @@
 # genasys-demo
 
 This is just a slightly cleaned up demo of the new index page for Genasys.
+Viewable at: https://courtneyjooste.github.io/genasys-demo/
 
 # DISCLAIMER:
 
