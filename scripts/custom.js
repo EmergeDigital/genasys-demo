@@ -8,7 +8,6 @@ $(document).ready(function(){
 
 	
 	if (isScrolledIntoView(objectString)  ){
-		alert("test");
 		counter1animate();
 		initialScroll = true;
 	}
@@ -97,7 +96,6 @@ $(document).ready(function(){
 
 		// var secondOne = document.getElementsByClassName("img-brand-block");
 		if (initialScroll === false  && isScrolledIntoView(objectString)  ){
-			alert("test");
 			counter1animate();
 			initialScroll = true;
 		}
@@ -383,7 +381,7 @@ $(document).ready(function(){
 			    }
 			})
 		}, 200);
-	}
+	}		
 
 	// function showChart2(){
 		
