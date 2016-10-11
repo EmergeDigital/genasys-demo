@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 	
 	if (isScrolledIntoView(objectString)  ){
+		alert("test");
 		counter1animate();
 		initialScroll = true;
 	}
@@ -30,7 +31,7 @@ $(document).ready(function(){
 	}
 
 	var initialScroll4 = false;
-	var objectString4 = $('#chart1')[0];
+	var objectString4 = $('.chart1-padding')[0];
 
 	if (isScrolledIntoView(objectString4)  ){
 		showChart1();
@@ -38,7 +39,7 @@ $(document).ready(function(){
 	}
 
 	var initialScroll5 = false;
-	var objectString5 = $('#chart2')[0];
+	var objectString5 = $('.chart2-padding')[0];
 
 	if (isScrolledIntoView(objectString5)  ){
 		showChart2();
@@ -96,6 +97,7 @@ $(document).ready(function(){
 
 		// var secondOne = document.getElementsByClassName("img-brand-block");
 		if (initialScroll === false  && isScrolledIntoView(objectString)  ){
+			alert("test");
 			counter1animate();
 			initialScroll = true;
 		}
@@ -265,42 +267,45 @@ $(document).ready(function(){
 		        }
 		    ]
 		};
-		var chartInstance = new Chart(ctx, {
-		    type: 'line',
-		    data: data,
-		    options: {
-		        title: {
-		            display: false
-		        },
-		        legend: {
-	            	display: true,
-		            labels: {
-		                fontColor: 'rgb(255, 255, 255)'
-		            }
-		        },
-			    scales:{
-				  xAxes:[{
-				    gridLines:{
-				      color:"rgba(255,255,255,0.35)",
-				      zeroLineColor:"rgba(255,255,255,0.35)"
-				    },
-				    ticks: {
-	                  fontColor: "#fff", // font color
-	                }
-				  }],
+		setTimeout(function() {
+			var chartInstance = new Chart(ctx, {
+			    type: 'line',
+			    data: data,
+			    options: {
+			        title: {
+			            display: false
+			        },
+			        legend: {
+		            	display: true,
+			            labels: {
+			                fontColor: 'rgb(255, 255, 255)'
+			            }
+			        },
+				    scales:{
+					  xAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }],
 
-				  yAxes:[{
-				    gridLines:{
-				      color:"rgba(255,255,255,0.35)",
-				      zeroLineColor:"rgba(255,255,255,0.35)"
-				    },
-				    ticks: {
-	                  fontColor: "#fff", // font color
-	                }
-				  }]
-				}
-		    }
-		})
+					  yAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }]
+					}
+			    }
+			})
+			
+		}, 200)
 
 
 	}
@@ -339,42 +344,45 @@ $(document).ready(function(){
 		        }
 		    ]
 		};
-		var chartInstance2 = new Chart(ctx2, {
-		    type: 'line',
-		    data: data2,
-		    options: {
-		        title: {
-		            display: false
-		        },
-		        legend: {
-	            	display: true,
-		            labels: {
-		                fontColor: 'rgb(255, 255, 255)'
-		            }
-		        },
-			    scales:{
-				  xAxes:[{
-				    gridLines:{
-				      color:"rgba(255,255,255,0.35)",
-				      zeroLineColor:"rgba(255,255,255,0.35)"
-				    },
-				    ticks: {
-	                  fontColor: "#fff", // font color
-	                }
-				  }],
 
-				  yAxes:[{
-				    gridLines:{
-				      color:"rgba(255,255,255,0.35)",
-				      zeroLineColor:"rgba(255,255,255,0.35)"
-				    },
-				    ticks: {
-	                  fontColor: "#fff", // font color
-	                }
-				  }]
-				}
-		    }
-		})
+		setTimeout(function() {
+			var chartInstance2 = new Chart(ctx2, {
+			    type: 'line',
+			    data: data2,
+			    options: {
+			        title: {
+			            display: false
+			        },
+			        legend: {
+		            	display: true,
+			            labels: {
+			                fontColor: 'rgb(255, 255, 255)'
+			            }
+			        },
+				    scales:{
+					  xAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }],
+
+					  yAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }]
+					}
+			    }
+			})
+		}, 200);
 	}
 
 	// function showChart2(){

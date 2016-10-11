@@ -177,6 +177,11 @@ a img, img {border:none;}
 
 }
 
+.chart1-padding{
+	height:50px;
+	width: 100%;
+}
+
 #chart1 {
 	height: 600px;
 	width: auto;
@@ -196,6 +201,11 @@ a img, img {border:none;}
     text-align: center;
     color: white;
 
+}
+
+.chart2-padding{
+	height:50px;
+	width: 100%;
 }
 
 #chart2 {

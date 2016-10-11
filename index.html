@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 <link rel="stylesheet" href="css/timelify.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/jquery.smoothDivScroll-1.1.js"></script>
 <script type="text/javascript" src="scripts/jquery.hoverIntent.minified.js" ></script>
 <style>
@@ -303,7 +303,8 @@ $(document).ready(function(){
 
 <div id="chart1-section">
 	<div class="container">
-		<h1>Employee Timeline</h1><br><br>
+		<h1>Employee Timeline</h1>
+		<div class="chart1-padding"></div>			
 		<canvas id="chart1"></canvas>
 	</div>
 </div>
@@ -416,8 +417,9 @@ $(document).ready(function(){
 </div>
 
 <div id="chart2-section">
-	<div class="container">
-		<h1>GWP per year</h1><br><br>
+	<div class="container">	
+		<h1>GWP per year</h1>
+		<div class="chart2-padding"></div>
 		<canvas id="chart2"></canvas>
 	</div>
 </div>
@@ -589,8 +591,6 @@ function handleLogin(){
 <script src="scripts/bootstrap.min.js"></script>
 <script src="scripts/custom.js"></script>
 <script src="scripts/Chart.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script src="scripts/jquery.timelify.js"></script>
 <script>
