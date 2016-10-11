@@ -180,6 +180,26 @@ a img, img {border:none;}
 	width: auto;
 }
 
+#timeline {
+	background-color: #fff;
+    padding-top: 80px;
+    text-align: center;
+
+}
+
+#chart2-section {
+	background-color: #445565;
+    padding-top: 80px;
+    padding-bottom: 250px;
+    text-align: center;
+    color: white;
+
+}
+
+#chart2 {
+	height: 600px;
+	width: auto;
+}
 /*=========== END INDEX NEW ============*/
 
 /*=========== START NEW FOOTER ===========*/

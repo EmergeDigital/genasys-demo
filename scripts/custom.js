@@ -37,6 +37,14 @@ $(document).ready(function(){
 		initialScroll4 = true;
 	}
 
+	var initialScroll5 = false;
+	var objectString5 = $('#chart2')[0];
+
+	if (isScrolledIntoView(objectString5)  ){
+		showChart2();
+		initialScroll5 = true;
+	}
+
 	function counter1animate(){
 		$('.count1').prop('Counter',0).animate({
 	        Counter: 90
@@ -105,6 +113,11 @@ $(document).ready(function(){
 		if (initialScroll4 === false  && isScrolledIntoView(objectString4)  ){
 			showChart1();
 			initialScroll4 = true;
+		}
+
+		if (initialScroll5 === false  && isScrolledIntoView(objectString5)  ){
+			showChart2();
+			initialScroll5 = true;
 		}
 
 	})
@@ -219,7 +232,6 @@ $(document).ready(function(){
 
 	//==============START CHARTS=================
 
-
 	function showChart1(){
 
 		var ctx = document.getElementById("chart1");
@@ -290,7 +302,85 @@ $(document).ready(function(){
 		    }
 		})
 
+
 	}
+		
+	function showChart2(){
+
+
+		var ctx2 = document.getElementById("chart2");
+		var data2 = {
+	    labels: ["Start", "2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+	    datasets: [
+		        {
+		            label: "GWP Billion Rand",
+		            fill: false,
+		            lineTension:0.1,
+		            backgroundColor: "rgba(54, 162, 235, 0)",
+		            borderColor: "rgba(231, 35, 37, 1)",
+		            borderCapStyle: 'butt',
+		            borderDash: [],
+		            borderDashOffset: 0.0,
+		            borderJoinStyle: 'miter',
+		            defaultFontColor:'#fff',
+		            // pointBorderColor: "rgba(54, 162, 235, 1)",
+		            pointBorderColor: "rgba(255, 255, 255, 1)",
+		            // pointBackgroundColor: "rgba(255, 255, 255, 1)",
+		            pointBackgroundColor: "rgba(231, 35, 37, 1)",
+		            pointBorderWidth: 2,
+		            pointHoverRadius: 5,
+		            pointHoverBackgroundColor: "rgba(255, 255, 255, 1)",
+		            pointHoverBorderColor: "rgba(231, 35, 37, 1)",
+		            pointHoverBorderWidth: 2,
+		            pointRadius: 4,
+		            pointHitRadius: 10,
+		            data: [0, 3, 5, 8, 10, 8, 9, 11],
+		            spanGaps: false,
+		        }
+		    ]
+		};
+		var chartInstance2 = new Chart(ctx2, {
+		    type: 'line',
+		    data: data2,
+		    options: {
+		        title: {
+		            display: false
+		        },
+		        legend: {
+	            	display: true,
+		            labels: {
+		                fontColor: 'rgb(255, 255, 255)'
+		            }
+		        },
+			    scales:{
+				  xAxes:[{
+				    gridLines:{
+				      color:"rgba(255,255,255,0.35)",
+				      zeroLineColor:"rgba(255,255,255,0.35)"
+				    },
+				    ticks: {
+	                  fontColor: "#fff", // font color
+	                }
+				  }],
+
+				  yAxes:[{
+				    gridLines:{
+				      color:"rgba(255,255,255,0.35)",
+				      zeroLineColor:"rgba(255,255,255,0.35)"
+				    },
+				    ticks: {
+	                  fontColor: "#fff", // font color
+	                }
+				  }]
+				}
+		    }
+		})
+	}
+
+	// function showChart2(){
+		
+
+	// }
 
 
 	//==============END CHARTS==================
