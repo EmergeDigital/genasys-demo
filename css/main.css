@@ -306,12 +306,17 @@ a img, img {border:none;}
 
  #copyright-footer {
  	padding-top: 20px;
-  	height: 65px;
+  	height: 70px;
 	width: 100%;
 	position:relative;
  	color: white;
  	background-color: #222;
 
+ }
+
+ .copyright-info {
+ 	text-align: left;
+ 	padding-top: 6px;
  }
 
  #copyright-footer a{
