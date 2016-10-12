@@ -306,8 +306,9 @@ a img, img {border:none;}
 
  #copyright-footer {
  	padding-top: 20px;
-  	height: 70px;
+  	min-height: 70px;
 	width: 100%;
+	bottom: 0px;
 	position:relative;
  	color: white;
  	background-color: #222;
