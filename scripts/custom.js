@@ -1,6 +1,15 @@
 
 $(document).ready(function(){
 
+	//Checking if elements are outside of body
+	// var all = document.body.getElementsByTagName("*");		
+	//  	for (var i = 0; i < all.length; i++) {		
+	//  	    if (jQuery('body').outerWidth() < jQuery(all[i]).outerWidth()) {		
+	//  	        console.log(all[i]);		
+	//  	    }		
+	//  	}
+
+
 	//========START SCROLLING SECTION============
 
 	var initialScroll = false;
@@ -17,7 +26,7 @@ $(document).ready(function(){
 
 	
 	if (isScrolledIntoView(objectString2)  ){
-		counter2animate();
+		counter2animate(11);
 		initialScroll2 = true;
 	}
 
@@ -57,21 +66,27 @@ $(document).ready(function(){
 	    });
 	}
 
-	function counter2animate(){
+	function counter2animate(num){
 		$('.count2').prop('Counter',0).animate({
-	        Counter: 14
+	        Counter: num
 	    }, {
 	        duration: 1800,
 	        easing: 'swing',
+	        start: function (){
+	        	hasAnimated = false; 
+	        },
 	        step: function (now) {
 	            $('.count2').text(Math.ceil(now));
+	        },
+	        done: function(){
+	        	hasAnimated = true;
 	        }
 	    });
 	}
 
 	function counter3animate(){
 		$('.count3').prop('Counter',0).animate({
-	        Counter: 11
+	        Counter: 12
 	    }, {
 	        duration: 1000,
 	        easing: 'swing',
@@ -101,7 +116,7 @@ $(document).ready(function(){
 		}
 
 		if (initialScroll2 === false  && isScrolledIntoView(objectString2)  ){
-			counter2animate();
+			counter2animate(11);
 			initialScroll2 = true;
 		}
 
@@ -130,6 +145,7 @@ $(document).ready(function(){
 	var currentFrame = 3;
 	var skipFrame = false;
 
+	//Function for shuffling cities in block 2
 	function shuffleCitites() {
 		
 		if (currentFrame === 3){			// FRAME 1 london / cpt / jhb 
@@ -207,6 +223,7 @@ $(document).ready(function(){
 		}
 	}
 
+	//Repeating function for shuffling citites
 	(function(){
 	    // do some stuff
 
@@ -222,6 +239,73 @@ $(document).ready(function(){
 	$( ".cities-box" ).click(function() {
     	shuffleCitites();
     	skipFrame = true;
+	});
+
+
+	var countriesIcon = 1;
+	var hasAnimated = false;
+
+	//Animate 3rd block between states
+	function shuffleBlock3(){
+		if(countriesIcon === 1){
+			$('.countries-text').fadeOut('fast', function(){
+				$('.countries-text').text("Users Worldwide");
+				$('.countries-text').fadeIn('fast');				
+			});
+			$('.count2').fadeOut('fast', function(){
+				$('.count2').fadeIn('fast');
+				counter2animate(3477);
+			})
+			var iconElement = document.getElementById('switch-fa');
+			var options = {
+			    from: 'fa-globe',
+			    to: 'fa-user-plus',
+			    animation: 'rubberBand'
+			};
+
+			iconate(iconElement, options);
+			countriesIcon = 0;
+		} else {
+			$('.countries-text').fadeOut('fast', function(){
+				$('.countries-text').text("Countries Deployed");
+				$('.countries-text').fadeIn('fast');
+			});
+			$('.count2').fadeOut('fast', function(){
+				$('.count2').fadeIn('fast');
+				counter2animate(11);
+			})
+			var iconElement = document.getElementById('switch-fa');
+			var options = {
+			    from: 'fa-user-plus',
+			    to: 'fa-globe',
+			    animation: 'rubberBand'
+			};
+
+			iconate(iconElement, options);
+			countriesIcon = 1;
+		}
+	}
+
+	//Repeating function for animating 3rd block
+	(function(){
+	    // do some stuff
+
+	    if(hasAnimated){
+	   		shuffleBlock3();
+	    } else {
+
+	    }
+
+	    setTimeout(arguments.callee, 4000);
+	})();
+
+	$( ".countries-box" ).click(function() {
+		if(hasAnimated){
+	    	shuffleBlock3();
+	    	hasAnimated = false;
+	    } else {
+
+	    }
 	});
 
 
@@ -381,7 +465,7 @@ $(document).ready(function(){
 			    }
 			})
 		}, 200);
-	}		
+	}
 
 	// function showChart2(){
 		

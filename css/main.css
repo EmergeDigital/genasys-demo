@@ -4,13 +4,8 @@ body, html {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	height: 100%;
-	width:100%;
+	
 }
-
-body {
-    overflow-x:hidden;
-}
-
 a {color:#db0f00}
 a:hover {color:#666;}
 a img, img {border:none;}
@@ -84,6 +79,37 @@ a img, img {border:none;}
     border-radius: 2px !important;
  	width: 80%;
  	color: black !important;
+ 	height: 35px;
+ 	padding: 0px !important; 
+ 	position: relative;
+}
+
+.splash-text a{
+	outline: 0 !important;
+	color: #EB2027 !important;
+}
+
+.splash-text a:hover, a:visited, a:active{
+	color: #BB2227;
+}
+
+.div-float-text {
+    top: 0px;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 9;
+    padding: 6px;
+}
+
+.invis-float-img{
+	width: 100%; height: 35px; 
+    top: 0px;
+    position: absolute;
+    left: 0px; 
+    z-index: 10;
 }
 
 #stats-section {
@@ -215,6 +241,29 @@ a img, img {border:none;}
 	height: 600px;
 	width: auto;
 }
+
+#logos-section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+	background: url("../elements/general_build/splash-bottom.jpg") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+	background-color: #222;
+
+
+}
+
+#twitter_wrap{
+	margin-top: 150px !important;
+
+}
+canvas{
+    width: 100% !important;
+    height: auto !important;
+}
 /*=========== END INDEX NEW ============*/
 
 /*=========== START NEW FOOTER ===========*/
@@ -315,10 +364,10 @@ a img, img {border:none;}
 
  }
 
- .copyright-info {
- 	text-align: left;
+.copyright-info {
+	text-align: left;
  	padding-top: 6px;
- }
+}
 
  #copyright-footer a{
  	color: white;

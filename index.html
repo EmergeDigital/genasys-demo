@@ -18,6 +18,7 @@ maximum-scale=1.0; user-scalable=no" />
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 <link rel="stylesheet" href="css/timelify.css">
+<link rel="stylesheet" href="css/iconate.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="scripts/jquery.smoothDivScroll-1.1.js"></script> -->
 <script type="text/javascript" src="scripts/jquery.hoverIntent.minified.js" ></script>
@@ -244,15 +245,15 @@ $(document).ready(function(){
 
 		<img src="elements/general_build/genasys-splash.png" alt="Genasys logo" class="img-responsive genasys-splash-logo">
 
-		<p class="splash-text">If you would like to engage with a Technology Partner that has the proven track record to help optimise your business with a stable and robust PAS, please contact us here</p>
+		<p class="splash-text">If you would like to engage with an established <a href="https://twitter.com/search?f=tweets&q=%23insuretechpartner" target="_blank">#insuretechpartner</a> that has the proven track record to help optimise your business with a stable and robust PAS, please contact us here</p>
 
 		<div class="splash-row">
 	    	<div class="col-md-4">
-				<input class="text-field-white" type="text" placeholder="Name" value="">
+				<input class="text-field-white" type="text" placeholder="Full Name" value="">
 	    	</div>
 
 	    	<div class="col-md-4">
-				<input class="text-field-white" type="text" placeholder="Surname" value="">
+				<input class="text-field-white" type="text" placeholder="Company Name" value="">
 	    	</div>
 
 	    	<div class="col-md-4">
@@ -296,11 +297,11 @@ $(document).ready(function(){
 				<p class="stats-subheading">Branch Locations Globally</p>
 	    	</div>
 	    	<div class="col-md-3 stats-box-outer">
-	    		<div class="stats-box-inner">	    		
-					<i class="fa fa-globe fa-3x users-icon" aria-hidden="true"></i>
+	    		<div class="stats-box-inner countries-box">	    		
+					<i id="switch-fa" class="fa fa-globe fa-3x users-icon" aria-hidden="true"></i>
 					<p class="box1-count"><span class="count2">0</span></p>
 	    		</div>
-				<p class="stats-subheading">Countries Deployed</p>
+				<p class="stats-subheading countries-text">Countries Deployed</p>
 	    	</div>
 	    	<div class="col-md-3 stats-box-outer">
 	    		<div class="stats-box-inner">
@@ -438,6 +439,22 @@ $(document).ready(function(){
 	</div>
 </div>
 
+<div id="logos-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-1" style="padding-top: 10px; padding-bottom: 10px;">
+				<a  href="http://www.microsoft.com" target="_blank"><img class="img-responsive" style="max-height: 200px; width: auto; height: auto;" src="elements/general_build/msal.png"></a>
+			</div>
+			<div class="col-md-6" style="padding-top: 10px; padding-bottom: 10px;">
+				<a  href="http://www.microsoft.com" target="_blank"><img class="img-responsive" style="max-height: 240px; width: auto; height: auto;" src="elements/general_build/msgad.png"></a>
+			</div>
+			<!-- <div class="col-md-2">
+			</div> -->
+		</div>
+	</div>
+</div>
+
+
 
 <div id="footer-new">
 	<div class="container">
@@ -533,6 +550,7 @@ function handleLogin(){
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="scripts/bootstrap.min.js"></script>
 <script src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/iconate.min.js"></script>
 <script src="scripts/Chart.bundle.min.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script src="scripts/jquery.timelify.js"></script>

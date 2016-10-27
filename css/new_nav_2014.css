@@ -182,7 +182,7 @@ form.support-form {width: 426px;}
 }
 .support-login-box a:link, .support-login-box a:visited {
 	color: #4a4a4a;
-	text-decoration: underline;
+	!oration: underline;
 }
 .spb-box-outer {
 	margin: 0 auto;
