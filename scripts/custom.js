@@ -421,7 +421,7 @@ $(document).ready(function(){
 		            pointHoverBorderWidth: 2,
 		            pointRadius: 4,
 		            pointHitRadius: 10,
-		            data: [0, 3, 5, 8, 10, 8, 9, 11],
+		            data: [0, 3, 5, 8, 9, 8, 10, 12],
 		            spanGaps: false,
 		        }
 		    ]
