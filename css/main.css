@@ -287,10 +287,21 @@ canvas{
 .flickity-page-dots {
 	bottom: -65px !important; 
 }
+
+.lg-header {
+	font-size: 2.8em;
+	text-align: center;
+	color: white;
+}
+
+.black-header {
+	color: black !important;
+}
 /*=========== END INDEX NEW ============*/
 
 
 /*=========START NEW TIMELINE===========*/
+
 
 html {
   box-sizing: border-box;
