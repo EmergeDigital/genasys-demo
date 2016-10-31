@@ -217,8 +217,8 @@ a img, img {border:none;}
 	width: 700px !important;
 }
 #chart1sm {
-	height: 100% !important;
-	width: auto !important;
+	height: auto !important;
+	width: 100vw !important;
 }
 #timeline {
 	background-color: #fff;
@@ -247,8 +247,8 @@ a img, img {border:none;}
 }
 
 #chart2sm {
-	height: 100% !important;
-	width: auto !important;
+	height: auto !important;
+	width: 100vw !important;
 }
 
 #logos-section{
