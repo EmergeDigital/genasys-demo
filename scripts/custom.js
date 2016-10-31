@@ -38,21 +38,21 @@ $(document).ready(function(){
 		initialScroll3 = true;
 	}
 
-	var initialScroll4 = false;
-	var objectString4 = $('.chart1-padding')[0];
+	// var initialScroll4 = false;
+	// var objectString4 = $('.chart1-padding')[0];
 
-	if (isScrolledIntoView(objectString4)  ){
-		showChart1();
-		initialScroll4 = true;
-	}
+	// if (isScrolledIntoView(objectString4)  ){
+	// 	showChart1();
+	// 	initialScroll4 = true;
+	// }
 
-	var initialScroll5 = false;
-	var objectString5 = $('.chart2-padding')[0];
+	// var initialScroll5 = false;
+	// var objectString5 = $('.chart2-padding')[0];
 
-	if (isScrolledIntoView(objectString5)  ){
-		showChart2();
-		initialScroll5 = true;
-	}
+	// if (isScrolledIntoView(objectString5)  ){
+	// 	showChart2();
+	// 	initialScroll5 = true;
+	// }
 
 	function counter1animate(){
 		$('.count1').prop('Counter',0).animate({
@@ -125,15 +125,15 @@ $(document).ready(function(){
 			initialScroll3 = true;
 		}
 
-		if (initialScroll4 === false  && isScrolledIntoView(objectString4)  ){
-			showChart1();
-			initialScroll4 = true;
-		}
+		// if (initialScroll4 === false  && isScrolledIntoView(objectString4)  ){
+		// 	showChart1();
+		// 	initialScroll4 = true;
+		// }
 
-		if (initialScroll5 === false  && isScrolledIntoView(objectString5)  ){
-			showChart2();
-			initialScroll5 = true;
-		}
+		// if (initialScroll5 === false  && isScrolledIntoView(objectString5)  ){
+		// 	showChart2();
+		// 	initialScroll5 = true;
+		// }
 
 	})
 
@@ -316,7 +316,6 @@ $(document).ready(function(){
 
 	//==============START CHARTS=================
 
-	function showChart1(){
 
 		var ctx = document.getElementById("chart1");
 		var data = {
@@ -349,6 +348,7 @@ $(document).ready(function(){
 		        }
 		    ]
 		};
+
 		setTimeout(function() {
 			var chartInstance = new Chart(ctx, {
 			    type: 'line',
@@ -389,10 +389,48 @@ $(document).ready(function(){
 			
 		}, 200)
 
+		var ctxsm = document.getElementById("chart1sm");
 
-	}
-		
-	function showChart2(){
+		setTimeout(function() {
+			var chartInstancesm = new Chart(ctxsm, {
+			    type: 'line',
+			    data: data,
+			    options: {
+			        title: {
+			            display: false
+			        },
+			        legend: {
+		            	display: true,
+			            labels: {
+			                fontColor: 'rgb(255, 255, 255)'
+			            }
+			        },
+				    scales:{
+					  xAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }],
+
+					  yAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }]
+					}
+			    }
+			})
+			
+		}, 200)
+
 
 
 		var ctx2 = document.getElementById("chart2");
@@ -421,7 +459,7 @@ $(document).ready(function(){
 		            pointHoverBorderWidth: 2,
 		            pointRadius: 4,
 		            pointHitRadius: 10,
-		            data: [0, 3, 5, 8, 9, 8, 10, 12],
+		            data: [0, 3, 5, 8, 10, 8, 9, 11],
 		            spanGaps: false,
 		        }
 		    ]
@@ -465,7 +503,47 @@ $(document).ready(function(){
 			    }
 			})
 		}, 200);
-	}
+
+		var ctx2sm = document.getElementById("chart2sm");
+
+		setTimeout(function() {
+			var chartInstance2sm = new Chart(ctx2sm, {
+			    type: 'line',
+			    data: data2,
+			    options: {
+			        title: {
+			            display: false
+			        },
+			        legend: {
+		            	display: true,
+			            labels: {
+			                fontColor: 'rgb(255, 255, 255)'
+			            }
+			        },
+				    scales:{
+					  xAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }],
+
+					  yAxes:[{
+					    gridLines:{
+					      color:"rgba(255,255,255,0.35)",
+					      zeroLineColor:"rgba(255,255,255,0.35)"
+					    },
+					    ticks: {
+		                  fontColor: "#fff", // font color
+		                }
+					  }]
+					}
+			    }
+			})
+		}, 200);
 
 	// function showChart2(){
 		
@@ -474,5 +552,46 @@ $(document).ready(function(){
 
 
 	//==============END CHARTS==================
+
+	//================FLICKITY==================
+
+	$('.main-carousel').flickity({
+	  // options
+	  cellAlign: 'center',
+	  contain: true,
+	  wrapAround: true,
+	  initialIndex: 1,
+	  prevNextButtons: false,
+	  pageDots: true
+	});
+
+
+	//==============END FLICKITY================
+
+
+	//============START SHINE EFFECT============
+
+	var gradient_percent = 0,
+    gradient_offset = {
+      min: -40,
+      max: 140
+    },
+    speed = 1.5,
+    gradient_color = 'rgba(130,156,178,1)',
+    empty_color = 'rgba(130,156,178,0)';
+
+	setInterval(function() {
+	  gradient_percent += speed;
+	  
+	  if (gradient_percent > gradient_offset.max) {
+	    gradient_percent = gradient_offset.min;
+	  }
+	  
+	  $('.text_mask').css('background-image', '-webkit-radial-gradient('+ gradient_percent +'% 50%, 3em 2em, ' + gradient_color + ' 0%, ' + empty_color + ' 100%)')
+	}, 17);
+
+
+	//=============END SHINE EFFECT=============
+
 	
 });

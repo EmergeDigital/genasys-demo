@@ -49,8 +49,9 @@ a img, img {border:none;}
 }
 
 .banner-top{
-	margin-top: 100px;
-    text-align: center; 	
+	/*margin-top: 100px;*/
+    text-align: center; 
+    padding: 0 200px 0 200px;	
 }
 
 .genasys-splash-logo{
@@ -212,10 +213,13 @@ a img, img {border:none;}
 }
 
 #chart1 {
-	height: 600px;
-	width: auto;
+	height: 350px !important;
+	width: 700px !important;
 }
-
+#chart1sm {
+	height: auto !important;
+	width: auto !important;
+}
 #timeline {
 	background-color: #fff;
     padding-top: 80px;
@@ -238,8 +242,13 @@ a img, img {border:none;}
 }
 
 #chart2 {
-	height: 600px;
-	width: auto;
+	height: 350px !important;
+	width: 700px !important;
+}
+
+#chart2sm {
+	height: auto !important;
+	width: auto !important;
 }
 
 #logos-section{
@@ -264,7 +273,163 @@ canvas{
     width: 100% !important;
     height: auto !important;
 }
+
+.flickity-page-dots .dot {
+	width: 13px !important;
+	height: 13px !important;
+	margin: 0 12px !important;
+	background: #445565 !important;
+}
+
+.flickity-page-dots .dot.is-selected {
+	background: #BC2228 !important;
+} 
+.flickity-page-dots {
+	bottom: -65px !important; 
+}
 /*=========== END INDEX NEW ============*/
+
+
+/*=========START NEW TIMELINE===========*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+#Steps{
+	height: auto;
+	padding: 50px 20px 50px 20px;
+}
+
+.steps-name{
+	padding-top:10px;
+}
+
+.section-header, .steps-header, .steps-name {
+  color: #3498DB;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.steps-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.steps-timeline {
+  outline: 1px dashed rgba(255, 0, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-timeline {
+    border-left: 2px solid #3498DB;
+    margin-left: 25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-timeline {
+    border-top: 2px solid #3498DB;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-left: 16.65%;
+    margin-right: 16.65%;
+  }
+}
+.steps-timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.steps-one,
+.steps-two,
+.steps-three {
+  outline: 1px dashed rgba(0, 128, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three {
+    margin-left: -25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three {
+    float: left;
+    width: 33%;
+    margin-top: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .steps-one {
+    margin-left: -16.65%;
+    margin-right: 16.65%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-three {
+    margin-bottom: -100%;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-three {
+    margin-left: 16.65%;
+    margin-right: -16.65%;
+  }
+}
+
+.steps-img {
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 500px) {
+  .steps-img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.steps-name,
+.steps-description {
+  margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+  .steps-name {
+    text-align: center;
+  }
+}
+
+.steps-description {
+  overflow: hidden;
+}
+@media screen and (min-width: 500px) {
+  .steps-description {
+    text-align: center;
+  }
+}
+
+
+
+/*==========END NEW TIMELINE============*/
 
 /*=========== START NEW FOOTER ===========*/
 #footer-new {
@@ -1496,6 +1661,40 @@ h4.vid_slide_trigger {
 	top: 20px;
 }
 
+.swiper-box {
+  display: flex;
+  width: 320px;
+  height: 200px;
+}
+
+.slide_wrapper {
+  margin-top: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.ghost_text,
+.text_mask {
+  font-size: 24px;
+}
+
+.ghost_text {
+  color: rgba(68,85,101, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.text_mask {
+  background-image: radial-gradient(circle 3em at 0%, rgba(130,156,178,1) 0%, rgba(130,156,178,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
 /* # Charl Clearing system
 ================================================== */
 
@@ -1532,9 +1731,8 @@ h4.vid_slide_trigger {
     }
 	
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+
+@media screen and (min-width: 768px) and (max-width: 1024	) {
 	#arrow_next {
 		background: url(../elements/products/arrow_next.png) bottom no-repeat;
 		right: 6px;
@@ -1545,7 +1743,23 @@ and (max-device-width : 1024px) {
 	}
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1200px	) {
+	.banner-top{
+		padding: 0 100px 0 100px;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 1024px){
+	.banner-top{
+		padding: 0 20px 0 20px;
+	}
+}
+
 @media screen and (min-width: 0px) and (max-width: 768px	) {
+  .main-carousel{
+  	display: none;
+  }
+	
   .hidden-mobile { display: none; }  /* hide it on small screens */
   .visible-mobile {display: block;}  /* show it on small screens */  
 }
