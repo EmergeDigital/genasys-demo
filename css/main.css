@@ -218,7 +218,7 @@ a img, img {border:none;}
 }
 #chart1sm {
 	height: auto !important;
-	width: 100vw !important;
+	max-width: 90vw !important;
 }
 #timeline {
 	background-color: #fff;
@@ -248,7 +248,7 @@ a img, img {border:none;}
 
 #chart2sm {
 	height: auto !important;
-	width: 100vw !important;
+	max-width: 90vw !important;
 }
 
 #logos-section{
