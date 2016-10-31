@@ -96,6 +96,25 @@ $(document).ready(function(){
 	    });
 	}
 
+	var graph1loaded = false;
+	var graph2loaded = false;
+
+	function splashLoad(){
+		var element = document.getElementById('top-splash-banner');
+		if(graph1loaded && graph2loaded){
+			var op = 0.1;  // initial opacity
+		    element.style.display = 'block';
+		    var timer = setInterval(function () {
+		        if (op >= 1){
+		            clearInterval(timer);
+		        }
+		        element.style.opacity = op;
+		        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+		        op += op * 0.1;
+		    }, 10);
+		}
+	}
+
 
 	// var imageElementString = $('.img-brand-block');
 	function isScrolledIntoView(el) {
@@ -350,6 +369,8 @@ $(document).ready(function(){
 		};
 
 		setTimeout(function() {
+			graph1loaded = true;
+			splashLoad();
 			var chartInstance = new Chart(ctx, {
 			    type: 'line',
 			    data: data,
@@ -466,6 +487,8 @@ $(document).ready(function(){
 		};
 
 		setTimeout(function() {
+			graph2loaded = true;
+			splashLoad();
 			var chartInstance2 = new Chart(ctx2, {
 			    type: 'line',
 			    data: data2,
