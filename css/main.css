@@ -217,7 +217,7 @@ a img, img {border:none;}
 	width: 700px !important;
 }
 #chart1sm {
-	height: auto !important;
+	height: 100% !important;
 	width: auto !important;
 }
 #timeline {
@@ -247,7 +247,7 @@ a img, img {border:none;}
 }
 
 #chart2sm {
-	height: auto !important;
+	height: 100% !important;
 	width: auto !important;
 }
 
