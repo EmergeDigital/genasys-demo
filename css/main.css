@@ -201,7 +201,7 @@ a img, img {border:none;}
 #chart1-section {
 	background-color: #BD2228;
     padding-top: 80px;
-    padding-bottom: 250px;
+    padding-bottom: 100px;
     text-align: center;
     color: white;
 
@@ -230,7 +230,7 @@ a img, img {border:none;}
 #chart2-section {
 	background-color: #445565;
     padding-top: 80px;
-    padding-bottom: 250px;
+    padding-bottom: 100px;
     text-align: center;
     color: white;
 
@@ -304,6 +304,7 @@ html {
 #Steps{
 	height: auto;
 	padding: 50px 20px 50px 20px;
+	margin-top: 50px;
 }
 
 .steps-name{
